@@ -2,6 +2,8 @@
 
 This source code implements the S-TLLR learning rule and replicates the experimental results obtained on the SHD, DVS Gesture, and DVS CIFAR-10 datasets. Its primary purpose is to aid in understanding the methodology and reproduce essential results.
 
+[[arXiv Paper]](https://arxiv.org/abs/2306.15220)
+
 ## How to use:
 Please, install the requirements listed in `requirements.txt`. Then, use the following command to run an experiment:
 
@@ -106,3 +108,18 @@ python main.py --arch stllr_shd_net --dataset SHD --batch-size 128 --val-batch-s
 ```shell
 python main.py --arch stllr_shd_net --dataset SHD --batch-size 128 --val-batch-size 128 --factors-stdp 0.5 1 1 1 --delay-ls 90 --save-path ./experiments/SHD_STLLR_DFA --print-freq 10 --data-path path_to_datasets_folder --trials 5 --epochs 200 --lr 0.0002 --label-encoding one-hot --feedback-mode DFA
 ```
+
+## Citation
+
+If you use this code in your research, please cite our paper:
+
+```bibtex
+@article{apolinario2024,
+  title={S-TLLR: STDP-inspired Temporal Local Learning Rule for Spiking Neural Networks},
+  author={M. P. E. Apolinario and K. Roy},
+  journal={arXiv preprint arXiv:2306.15220},
+  year={2024},
+  url={https://arxiv.org/abs/2306.15220}
+}
+```
+
