@@ -1,8 +1,9 @@
 # S-TLLR: STDP-inspired Temporal Local Learning Rule for Spiking Neural Networks
 
-This source code implements the S-TLLR learning rule and replicates the experimental results obtained on the SHD, DVS Gesture, and DVS CIFAR-10 datasets. Its primary purpose is to aid in understanding the methodology and reproduce essential results.
+This repository contains the official implementation of the paper [S-TLLR: STDP-inspired Temporal Local Learning Rule for Spiking Neural Networks](https://openreview.net/forum?id=CNaiJRcX84) published in Transactions on Machine Learning Research (TMLR).
 
-[[arXiv Paper]](https://arxiv.org/abs/2306.15220)
+## Abstract:
+Spiking Neural Networks (SNNs) are biologically plausible models that have been identified as potentially apt for deploying energy-efficient intelligence at the edge, particularly for sequential learning tasks. However, training of SNNs poses significant challenges due to the necessity for precise temporal and spatial credit assignment. Back-propagation through time (BPTT) algorithm, whilst the most widely used method for addressing these issues, incurs high computational cost due to its temporal dependency. In this work, we propose S-TLLR, a novel three-factor temporal local learning rule inspired by the Spike-Timing Dependent Plasticity (STDP) mechanism, aimed at training deep SNNs on event-based learning tasks. Furthermore, S-TLLR is designed to have low memory and time complexities, which are independent of the number of time steps, rendering it suitable for online learning on low-power edge devices. To demonstrate the scalability of our proposed method, we have conducted extensive evaluations on event-based datasets spanning a wide range of applications, such as image and gesture recognition, audio classification, and optical flow estimation. S-TLLR achieves comparable accuracy to BPTT (within $\pm2\%$ for most tasks), while reducing memory usage by $5-50\times$ and multiply-accumulate (MAC) operations by $1.3-6.6\times$, particularly when updates are restricted to the last few time-steps.
 
 ## How to use:
 Please, install the requirements listed in `requirements.txt`. Then, use the following command to run an experiment:
@@ -114,12 +115,15 @@ python main.py --arch stllr_shd_net --dataset SHD --batch-size 128 --val-batch-s
 If you use this code in your research, please cite our paper:
 
 ```bibtex
-@article{apolinario2024,
-  title={S-TLLR: STDP-inspired Temporal Local Learning Rule for Spiking Neural Networks},
-  author={M. P. E. Apolinario and K. Roy},
-  journal={arXiv preprint arXiv:2306.15220},
-  year={2024},
-  url={https://arxiv.org/abs/2306.15220}
+@article{
+apolinario2025stllr,
+title={S-{TLLR}: {STDP}-inspired Temporal Local Learning Rule for Spiking Neural Networks},
+author={Marco Paul E. Apolinario and Kaushik Roy},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2025},
+url={https://openreview.net/forum?id=CNaiJRcX84},
+note={}
 }
 ```
 
